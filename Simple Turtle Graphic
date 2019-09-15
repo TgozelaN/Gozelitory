@@ -1,0 +1,41 @@
+import turtle
+
+bob = turtle.Turtle()
+bob.getscreen().bgcolor('black')
+bob.speed(0)
+bob.pensize(2)
+bob.color('white')
+bob.forward(100)
+bob.left(90)
+bob.forward(100)
+bob.left(90)       
+bob.forward(100)
+bob.left(90)
+bob.forward(100)
+bob.left(90)
+bob.hideturtle()
+colors  = ["red","white"]
+i = 1
+for i in range(90) :
+ bob.color("red")  
+ bob.left(4)
+ bob.forward(100)
+ bob.left(90)
+ bob.forward(100)
+ bob.left(90)       
+ bob.forward(100)
+ bob.left(90)
+ bob.forward(100)
+ bob.left(90)
+ i = i + 1
+ bob.color("white")  
+ bob.left(4)
+ bob.forward(100)
+ bob.left(90)
+ bob.forward(100)
+ bob.left(90)       
+ bob.forward(100)
+ bob.left(90)
+ bob.forward(100)
+ bob.left(90)
+ i = i + 1
