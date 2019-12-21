@@ -1,0 +1,56 @@
+def add(x, y) :
+    return x + y
+def multiply(x, y ) :
+    return x * y
+def devide(x, y) :
+    return x/y
+def subtract(x, y) :
+    return x - y
+def power(x, y ) :
+    return x ** y
+
+print ('1. add')
+print ('2. subtract')
+print ('3. devide')
+print ('4. multiply')
+print ('5. power')
+
+choice = raw_input ('choose an operation from 1/2/3/4/5  : '      )
+
+if choice == '1' :
+    num1 = raw_input('give us the first number :     ')
+    num2 = raw_input('give us the second number :    ')
+    a = float(num1)
+    b = float(num2)
+    print (num1 + '+' + num2 + "=" + str(add(a, b)))
+           
+
+elif choice == '2' :
+    num1 = raw_input('give us the first number :     ')
+    num2 = raw_input('give us the second number :    ')
+    a = float(num1)
+    b = float(num2)
+    print (num1 + "-" + num2 + "=" + str(subtract(a, b)))
+           
+elif choice == '3' :
+    num1 = raw_input('give us the first number :      ')
+    num2 = raw_input('give us the second number :     ')
+    a = float(num1)
+    b = float(num2)
+    print (num1 + "/" + num2 + "=" + str(devide(a, b)))           
+elif choice == '4' :
+    num1 = raw_input('give us the first number :      ')
+    num2 = raw_input('give us the second number :     ')
+    a = float(num1)
+    b = float(num2)
+    print (num1 + "*" + num2 + "=" + str(multiply(a, b)))
+           
+elif choice == '5' :
+    num1 = raw_input('give us the first number :     ')
+    num2 = raw_input('give us the second number :    ')
+    a = float(num1)
+    b = float(num2)
+    print (num1 + "**" + num2 + "=" + str(power(a, b)))
+           
+else :
+    print ('Wrong Choice')
