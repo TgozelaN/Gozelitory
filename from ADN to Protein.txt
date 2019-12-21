@@ -1,0 +1,240 @@
+
+adn = raw_input ('''give us an ADN sequence(no matter upper or lowercase) :
+''') #entrer la sequence d'adn
+k = 0
+adnh = adn.strip()
+while k < len(adnh) :
+   if adnh[k] == ' ' :
+      adnh[k] == ''
+      k = k + 1
+   else :
+   #adnn = adnh.replace(" ","")
+      k = k +  1
+
+adn1 = adnh.replace('t','0')
+adn2 = adn1.replace('a','0')
+adn3 = adn2.replace('g','0')
+adn4 = adn3.replace('c','0')
+adn5 = adn4.replace('T','0')
+adn6 = adn5.replace('A', '0')
+adn7 = adn6.replace('G', '0')
+adn8 = adn7.replace('C', '0')  #changer le sequence d'adn juste en serie de zeros
+
+if adn=='':
+   print ('False ADN sequence')
+elif adn8.upper() != adn8 :
+   print ('False ADN sequence')
+elif not('0' in adn8) :
+   print ('False ADN sequence')
+elif int(adn8) == 0 and (len(adnh)%3 == 0) :
+   print ('''
+True ADN sequence
+
+''')
+   print 'the length of the sequence(number of nucleotides) :  ' + str((len(adnh)))
+   arn= adnh.replace('t','u')
+   arn1= arn.replace('T','u') #remplacer le t et T par u
+   arnfinal= arn1.upper() #nrodou arn kollou majuscule fi variable jdida
+   print ('the ARN sequence is :')
+   print arnfinal
+   length = len(arnfinal) #lenght= 12
+   codon = len(arnfinal)/3 #codon=4
+   print '''
+
+
+'''
+   n = 0
+   i = 1
+   codons =[]
+   while n< length :
+      print 'codon ' + str(i) + '  :       ' + arnfinal[n:n+3]
+      codons.append(arnfinal[n:n+3])
+      n += 3
+      i += 1
+   #print codons
+   print '''
+
+This is the traduction of your sequence
+
+'''
+
+   for c in codons :
+      if c == 'UUA' or c == 'UUG' or c == 'CUU' or c == 'CUC' or c == 'CUA' or c == 'CUG':
+         if codons.index(c) == len(codons)-1 :
+           print 'Leu'  ,
+         else :
+           print 'Leu' ' -',
+      elif c == 'UUU' or c == 'UUC' :
+         if codons.index(c) == len(codons)-1 :
+           print 'Phe'  ,
+         else : 
+           print 'Phe' ' -',
+      elif c == 'AUU' or c == 'AUC' or c == 'AUA' :        
+         if codons.index(c) == len(codons)-1 :
+            print 'Ile' ,
+         else :
+            print 'Ile'  ' -' ,
+      elif c == 'AUG' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Met' ,
+         else :
+            print 'Met' ' -' ,
+      elif c =='GUU' or c =='GUA' or c == 'GUC' or c =='GUG' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Val' ,
+         else :
+            print 'Val' ' -' ,
+      elif c == 'UCU' or c=='UCC' or c=='UCA' or c== 'UCG' or c == 'AGC' or c=='AGU' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Ser' ,
+         else :
+            print 'Ser' ' -' ,
+      elif c == 'CCC'or c == 'CCA'or c == 'CCG'or c == 'CCU' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Pro' ,
+         else :
+            print 'Pro' ' -' ,
+      elif c ==  'ACC'or c == 'ACG'or c == 'ACU'or c == 'ACA'  :
+         if codons.index(c) == len(codons)-1 :
+            print 'Thr' ,
+         else : 
+            print 'Thr' ' -' ,
+      elif c ==  'GCG'or c == 'GCC'or c == 'GCU'or c == 'GCA' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Ala',
+         else :
+            print 'Ala' ' -',
+      elif c ==   'UAU'or c == 'UAC' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Tyr' ,
+         else :
+            print 'Tyr' ' -' ,                           
+      elif c == 'CAU' or c =='CAC' :
+         if codons.index(c) == len(codons)-1 :
+            print 'His' ,
+         else :
+            print 'His' ' -' ,
+      elif c == 'CAA'or c == 'CAG' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Gln' ,
+         else :
+            print 'Gln' ' -',
+      elif c == 'AAU'or c == 'AAC' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Asn' ,
+         else :
+            print 'Asn' ' -' ,
+      elif c ==  'AAG'or c == 'AAA' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Lys' ,
+         else :
+            print 'Lys' ' -' ,
+      elif c ==  'GAU'or c == 'GAC' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Asp' ,
+         else :
+            print 'Asp' ' -' ,
+      elif c ==  'GAA' or c =='GAG' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Glu' ,
+         else :
+            print 'Glu' ' -' ,
+      elif c ==  'UGU'or c == 'UGC' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Cys' ,                                          
+         else :
+            print 'Cys' ' -' ,
+      elif c == 'UGG' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Trp' ,
+         else :
+            print 'Trp' ' -' ,
+      elif  c ==  'CGC' or c =='CGG'or c == 'CGU'or c == 'CGA' or c =='AGA'or c == 'AGG'  :
+         if codons.index(c) == len(codons)-1 :
+            print 'Arg' ,
+         else :
+            print 'Arg' ' -' ,
+      elif c ==    'GGG'or c == 'GGA'or c == 'GGC'or c == 'GGU' :
+         if codons.index(c) == len(codons)-1 :
+            print 'Gly' ,
+         else :
+            print 'Gly' ' -' ,
+      elif c == 'UAA'  :
+         if codons.index(c) == len(codons)-1 :
+            print 'Codon Stop',
+         else :
+            print 'Codon Stop' ' -',
+      elif  c=='UAG'  :
+         if codons.index(c) == len(codons)-1 :
+            print 'Codon Stop (Pyr)' ,
+         else :
+            print 'Codon Stop (pyr) ' ' -' ,
+      elif  c=='UGA'  :
+         if codons.index(c) == len(codons)-1 :
+            print 'Codon Stop (Sec)' ,
+         else :
+            print 'Codon Stop (Sec) ' ' -' ,      
+      else :
+         pass
+
+   m = 0
+   for c in codons :
+      if c == 'UUA' or c == 'UUG' or c == 'CUU' or c == 'CUC' or c == 'CUA' or c == 'CUG':        
+         m = m + 131.17
+      elif c == 'UUU' or c == 'UUC' :
+         m = m + 165.19
+      elif c == 'AUU' or c == 'AUC' or c == 'AUA' :
+         m = m + 131.17
+      elif c == 'AUG' :
+         m = m + 149.21
+      elif c =='GUU' or c =='GUA' or c == 'GUC' or c =='GUG' :
+         m = m + 117.15
+      elif c == 'UCU' or c=='UCC' or c=='UCA' or c== 'UCG' or c == 'AGC' or c=='AGU':
+         m = m + 105.09
+      elif c == 'CCC'or c == 'CCA'or c == 'CCG'or c == 'CCU' :
+         m = m + 115.13
+      elif c ==  'ACC'or c == 'ACG'or c == 'ACU'or c == 'ACA'  :
+         m = m + 119.12
+      elif c ==  'GCG'or c == 'GCC'or c == 'GCU'or c == 'GCA' :
+         m = m + 89.09
+      elif c ==   'UAU'or c == 'UAC' : 
+         m = m + 181.19
+      elif c == 'CAU' or c =='CAC' :
+         m = m + 155.16          
+      elif c == 'CAA'or c == 'CAG' :
+         m = m + 146.15      
+      elif c == 'AAU'or c == 'AAC' :
+         m = m + 132.12       
+      elif c ==  'AAG'or c == 'AAA' :
+         m = m + 146.19       
+      elif c ==  'GAU'or c == 'GAC' :
+         m = m + 133.10        
+      elif c ==  'GAA' or c =='GAG' :
+         m = m + 147.13        
+      elif c ==  'UGU'or c == 'UGC' :
+         m = m + 121.15
+      elif c == 'UGG' :
+         m = m + 204.23     
+      elif  c ==  'CGC' or c =='CGG'or c == 'CGU'or c == 'CGA' or c =='AGA'or c == 'AGG'  :
+         m = m + 174.20    
+      elif c ==    'GGG'or c == 'GGA'or c == 'GGC'or c == 'GGU' :
+         m = m + 75.07         
+      elif c == 'UAA'  :
+         m = m + 0     
+      elif  c=='UAG'  :
+         m = m + 255.31      
+      elif  c=='UGA'  :
+         m = m + 168.05   
+      else :
+         pass
+   print ''
+   print''
+   print 'La masse molaire de ce protéine est :   ' + str(m) + '  Dalton'  
+else :
+   print ('False ADN sequence')   #netthabtou est ce que el chaine feha des t,c,g,a w tet9sem 3la 3 ou nn'''
+
+
+#print pd.read_excel('1.xlsx')
+#import pandas as pd
+#data=pd.read_excel('1.xlsx')
+#print(data)
