@@ -1,0 +1,21 @@
+import turtle
+import math
+
+bob = turtle.Turtle()
+bob.getscreen().bgcolor('black')
+bob.color("white")
+bob.speed(0)
+bob.pensize(1)
+
+
+i = 1
+for i in range(50) :
+    bob.forward(50)
+    bob.left(90)
+    bob.forward(50)
+    bob.left(90)
+    bob.forward(50)
+    bob.left(90)
+    bob.forward(50)
+    bob.left(5)
+    i = i + 1
